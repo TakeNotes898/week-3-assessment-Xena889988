@@ -7,19 +7,19 @@
 class App extends Component{
   constructor(){
     super()
-    // 1.
+    // 1. setting up the "variables"
     this.state = {
       userInput: "",
     }
   }
 
   robot = (e) => {
-    // 2.
+    // 2. creating a method to use HANDLEINPUT
     this.setState({ userInput: e.target.value})
   }
 
   render(){
-    // 3.
+    // 3. creating a function
     let { userInput } = this.state
 
     return(
@@ -28,16 +28,16 @@ class App extends Component{
 
         <h3>Enter text here:</h3>
         <input
-          {/* 4. */}
+          {/* 4. create a class */}
           onChange={ this.robot }
-          {/* 5. */}
+          {/* 5. create an output*/}
           value={ userInput }
         />
 
         <div>
-          {/* 6. */}
+          {/* 6. handleinput of what is going to happen*/}
           <GoodRobot
-            {/* 7. */}
+            {/* 7. this.state.robots talk*/}
             userInput={ userInput }
           />
           <BadRobot
@@ -58,14 +58,14 @@ export default App
 class GoodRobot extends Component{
   render(){
     return(
-      // 8.
+      // 8. wrap in a div make output conversation
       <div>
         <h3>Good Robot</h3>
-        {/* 9. */}
+        {/* 9. create an props.output for a robot */}
         <h4>I hear you saying { this.props.userInput }. Is that correct?</h4>
       </div>
     )
   }
 }
-// 10.
+// 10. expot it to the main app.js
 export default GoodRobot
